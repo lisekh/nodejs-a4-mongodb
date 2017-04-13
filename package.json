@@ -1,7 +1,7 @@
 {
   "name": "i-love-my-city",
   "version": "1.0.0",
-  "description": "nodejs-a2",
+  "description": "nodejs-a2. Heroku link: https://node-a2-cities.herokuapp.com/",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
