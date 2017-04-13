@@ -1,0 +1,31 @@
+{
+  "name": "i-love-my-city",
+  "version": "1.0.0",
+  "description": "nodejs-a2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisekh/nodejs-a2.git"
+  },
+  "keywords": [
+    "nodejs",
+    "ejs"
+  ],
+  "author": "Lise Haugen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lisekh/nodejs-a2/issues"
+  },
+  "homepage": "https://github.com/lisekh/nodejs-a2#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {}
+}
