@@ -2,7 +2,7 @@
     <ul class="sidebar-nav">
         <br />
         <li class="sidebar-brand">
-            <a class="brandFont" align="center" href="/">
+            <a class="logo-font" align="center" href="/">
                   Leave a story and your thoughts!
             </a>
         </li>
@@ -27,12 +27,12 @@
 
         <br /><br /><br />
 
-        <%if(typeof(session.loggedIn) == 'undefined') {%>
+        <% if(typeof(session.loggedIn) == 'undefined') {%>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a type="button" href="/login" class="btn btn-primary btn-lg outline">Login</a>&nbsp;&nbsp;&nbsp;
                 <a type="button" href="/register" class="btn btn-warning btn-lg outline">Sign up</a>
             </div>
-        <%}else{%>
+        <% } else { %>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a type="button" align="center" href="/logout" class="btn btn-danger btn-lg outline">Logout</a>&nbsp;&nbsp;&nbsp;
             </div>

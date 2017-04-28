@@ -35,7 +35,7 @@ exports.newStory = function (req, res) {
 }
 
 exports.techStack = function (req, res) {
-    res.render('techStack', {
+    res.render('tech-stack', {
         session: req.session
     });
 }

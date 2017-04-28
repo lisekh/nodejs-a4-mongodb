@@ -7,7 +7,6 @@ var chalk = require('chalk');
 var mongoose = require('mongoose');
 var db = require('./models/db.js');
 
-
 // Session handling
 var session = require('express-session');
 app.use(session({secret:"mysecret", resave: true, saveUninitialized:true}));
@@ -24,21 +23,22 @@ app.use(express.static(__dirname + '/public'));
 // Routes
 var routes = require('./routes/routes.js');
 app.get('/', routes.index);
-app.get('register', routes.register);
+app.get('/register', routes.register);
 app.get('/login', routes.login);
-app.get('techStack', routes.techStack);
+app.get('/techStack', routes.techStack);
+app.get('/new-story', routes.newStory);
 
 // User routes
 var user = require('./routes/user.js');
-app.get('/newUser', user.createUser);
+app.post('/newUser', user.createUser);
 app.get('/registrated', user.userRegistrated);
-app.get('/authenticate', user.login);
+app.post('/auth', user.login);
 app.get('/logout', user.logout);
 
 var story = require('./routes/story.js');
-app.get('stories', story.stories);
-app.get('addStory', story.addStory);
-app.get('saveComment', story.saveComment);
+app.get('/stories', story.stories);
+app.get('/addStory', story.addStory);
+app.get('/saveComment', story.saveComment);
 
 // Port and start listening
 app.set('port', process.env.PORT || 8080);

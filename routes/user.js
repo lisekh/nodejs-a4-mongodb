@@ -76,10 +76,11 @@ exports.login = function (req, res) {
 // Logout a user
 exports.logout = function (req, res) {
     console.log("Logg out user: " + req.session.username);
-    var loggedOutUser = req.session.username;
+    var thisUser = req.session.username;
     req.session.destroy();
-    console.log("User logged out:" + loggedOutUser);
+    console.log("User logged out: " + thisUser);
+
     res.render('logout', {
-        loggedOutUser: loggedOutUser
+        logoutUser: thisUser
     });
 }
