@@ -42,6 +42,17 @@ app.get('/saveComment', story.saveComment);
 app.get('/stories/:story',story.getStory);
 app.post('/stories/:slug/saveComment',story.saveComment);
 
+// Error handling
+app.use(function(req, res) {
+     console.log(chalk.red("404 error"));
+     res.status(404).render('404');
+});
+
+app.use(function(error, req, res, next) {
+     console.log(chalk.red('500 error'));
+     res.status(500).render('500');
+});
+
 // Port and start listening
 app.set('port', process.env.PORT || 8080);
 app.listen(app.get('port'), function(req, res) {
