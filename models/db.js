@@ -4,7 +4,9 @@ var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 2;
 
 
-var dbURI = 'mongodb://localhost/mydb';
+//var dbURI = 'mongodb://localhost/mydb';
+
+var dbURI = 'mongodb://lise:lise123@ds123381.mlab.com:23381/mydb'
 
 // Connect to db
 mongoose.connect(dbURI);
