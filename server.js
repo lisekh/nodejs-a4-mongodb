@@ -37,8 +37,10 @@ app.get('/logout', user.logout);
 
 var story = require('./routes/story.js');
 app.get('/stories', story.stories);
-app.get('/addStory', story.addStory);
+app.post('/add-story', story.addStory);
 app.get('/saveComment', story.saveComment);
+app.get('/stories/:story',story.getStory);
+app.post('/stories/:slug/saveComment',story.saveComment);
 
 // Port and start listening
 app.set('port', process.env.PORT || 8080);

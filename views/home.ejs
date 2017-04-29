@@ -13,20 +13,23 @@
                 <div class="row">
                     <div class="col-md-12">
                        <a href="#menu-toggle" class="btn btn-success" id="menu-toggle">Toggle Screen</a><br/><br/>
-                        <% if(typeof(stories) !== 'undefined') {%>
 
+                        <% if(typeof(stories) !== 'undefined') {%>
                            <% for(var i=0; i < stories.length; i++) { %>
-                               <h1><%- stories[i].title %></h1>
-                               <h4>Created by 
-                                    <code><%=stories[i].author%> on <%-stories[i].created_at.toUTCString()  %> </code>
+                           <p class="panel panel-default">
+                                <h1><a href='/stories/<%- stories[i].slug%>'><%- stories[i].title %></a></h1>
+                                <small>Created by 
+                                        <code><%=stories[i].author%> on <%-stories[i].created_at.toUTCString()  %> </code>
+                                    </small>
+                                    <br /><br />
+                                <h4>
+                                    <b><%- stories[i].summary %></b>
                                 </h4>
-                                <br /><br />
-                               <p>
-                                    <%- stories[i].summary %>  <b>- Read the full story <a href='/stories/<%- stories[i].slug%>'>here</a></b>
-                               </p>
+                            </p>
                                <br/><br/>
                            <%}%>
                         <%}%>
+
                     </div>
                 </div>
             </div>

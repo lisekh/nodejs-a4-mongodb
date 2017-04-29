@@ -33,6 +33,8 @@ exports.addStory = function (req, res) {
 
     newStory.slug = addingHyphen;
 
+    console.log("Slug: " + newStory.slug);
+
     newStory.save(function (error, savedStory) {
         if (error) {
             console.log("Error occurred when saving story.");
@@ -48,9 +50,9 @@ exports.getStory = function (req, res) {
     var url = req.params.story;
     Story.findOne({
         slug: url
-    }, function (error, story) {
+    }, function (error, mystory) {
         res.render('story', {
-            story: story,
+            story: mystory,
             session: req.session
         });
     });
@@ -61,6 +63,10 @@ exports.saveComment = function (req, res) {
     var story_slug = req.params.slug;
     var comment = req.body.comment;
     var posted_date = new Date();
+
+    console.log("Story-slug: " + story_slug);
+    console.log("Comment: " + comment);
+    console.log("Posted date: " + posted_date);
 
     Story.findOne({slug: story_slug}, function (err, story) {
         story.comments.push({
